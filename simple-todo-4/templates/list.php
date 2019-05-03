@@ -9,7 +9,7 @@
   <ul>
     <?php foreach ($todos as $todo): ?>
     <li>
-        Todo id <?= $todo['tid'] ?>:<?= $todo['todo'] ?>
+      <a href="http://127.0.0.1:8080/show.php?id=<?php echo $todo['tid'] ?>">  Todo id <?= $todo['tid'] ?>:<?= $todo['todo'] ?></a>
     </li>
     <?php endforeach ?>
   </ul>
