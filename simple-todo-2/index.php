@@ -10,7 +10,9 @@ $result = $link->query('SELECT * from '. TABLE);
 
 $todos = array();
 while ($row = $result->fetch()) {
-    $todos[] = $row['todo'];
+    $todos[] = $row;
+
+
 }
 
 $link = null;
