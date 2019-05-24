@@ -1,0 +1,31 @@
+{# templates/showtodo.html.twig #}
+
+{% extends "todoslayout.html.twig" %}
+
+{#
+  {{ dump(todo) }}
+#}
+
+{% block title %}Details for todo {{ id }}{% endblock %}
+
+{% block content %}
+	<div class="col-md-9">
+        
+        <h2>Description : {{ todo.todo }}</h2>
+        
+        <p>Status: {{ todo.complete }}</p>
+        <p>Created: {{ todo.created|date('Y-m-d') }}</p>
+        <p>Last modified: {{ todo.updated|date('Y-m-d') }}</p>
+
+	</div> <!-- /.col-md-9 -->
+
+	<div class="col-md-3">
+        
+		<ul>
+			<li><a href="/task/{{ id }}/modify">Modifier</a></li>
+			<li><a href="/task/{{ id }}/deletey">Supprimer</a></li>
+		</ul>        
+
+	</div> <!-- /.col-md-3 -->
+	
+{% endblock %} {# content #}

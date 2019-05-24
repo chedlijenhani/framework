@@ -1,0 +1,39 @@
+{# templates/todoslayout.html.twig
+
+  Implémente un gabarit Bootstrap commun aux pages de l'appli todolist 
+ 
+  Les blocs suivants sont surchargeables :
+   - title : titre de la page pour affichage en haut de page
+   - content : contenu de la row du milieu de page
+  
+  Les blocs suivants de baselayout.html.twig sont surchargés :
+   - header : premiers éléments contenus dans le <div class="container"> bootstrap (une row par ex.)
+   - main : milieur du contenu bootstrap (deuxième row)
+   - footer : fin des éléments du container bootstrap. Typiquement un <footer>
+      
+ #}
+ {% extends "baselayout.html.twig" %}
+
+{% block header %}
+<div class="row">
+	<div class="col-md-12">
+		<a href="{{  path('home') }}">Home</a>
+	</div>
+</div>
+<div class="row">
+	<div class="col-md-12">
+		<h1>{% block title %}HEADER{% endblock %}</h1>
+	</div>
+</div>
+{% endblock %} {# header #}
+
+{% block main %}
+	<div class="row">
+	{% block content %}
+			CONTENT
+	{% endblock %} {# content #}
+	</div>	<!-- /.row -->	
+{% endblock %} {# main #}
+
+{% block footer %}{% endblock %}
+
